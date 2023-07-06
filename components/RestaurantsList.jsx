@@ -1,13 +1,14 @@
 import RestaurantItem from './RestaurantItem';
 import PropTypes from 'prop-types';
+import Grid from './styled/Grid';
 
 const RestaurantsList = ({ restaurants }) => {
   return (
-    <div className='grid'>
+    <Grid>
       {restaurants.map((restaurant) => (
         <RestaurantItem key={restaurant.id} {...restaurant} />
       ))}
-    </div>
+    </Grid>
   )
 }
 

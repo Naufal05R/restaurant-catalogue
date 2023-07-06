@@ -1,13 +1,15 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
+import Card from './styled/Card';
+import Container from './styled/Container';
+import Image from './styled/Image';
 
 const RestaurantItem = ({ id, pictureId, name, description }) => {
   return (
-    <div className='card'>
-      <img src={`https://restaurant-api.dicoding.dev/images/small/${pictureId}`} alt={name} />
+    <Card>
+      <Image height="250px" src={`https://restaurant-api.dicoding.dev/images/small/${pictureId}`} alt={name} />
       
-      <div className="container">
+      <Container>
         <h2>
           <Link href={`/detail/${id}`}>
             {name}
@@ -17,8 +19,8 @@ const RestaurantItem = ({ id, pictureId, name, description }) => {
           {description}
         </p>
         <br />
-      </div>
-    </div>
+      </Container>
+    </Card>
   )
 }
 
